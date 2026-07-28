@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Usha Amma! 🎂✨</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Dancing+Script:wght@700&family=Great+Vibes&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+    <div id="cursor-sparkles" aria-hidden="true"></div>
+
+    <!-- Background Music Player -->
+    <div class="audio-control" id="audio-control-btn" title="Toggle Music">
+        <div class="music-disc">🎵</div>
+    </div>
+    <audio id="bg-music" loop preload="auto">
+        <source src="audio/Yaaro en nenjai song) bgm Whatsapp status bhanushShreya Saran.mp3" type="audio/mpeg">
+    </audio>
+<!-- PASSWORD GATE -->
+    <section id="password-screen" class="password-screen">
+        <div class="password-orb orb-one"></div><div class="password-orb orb-two"></div>
+        <div class="glass-card password-card">
+            <span class="password-sparkle sparkle-left">&#10022;</span><span class="password-sparkle sparkle-right">&#10023;</span>
+            <p class="password-kicker">A little secret awaits</p><h1>For <span>Usha Amma</span></h1>
+            <p class="password-copy">Enter the special four-digit key to open your birthday surprise.</p>
+            <form id="password-form" novalidate><label class="sr-only" for="password-input">Birthday password</label><input id="password-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="&#8226; &#8226; &#8226; &#8226;" aria-describedby="password-message"><button type="submit" class="password-btn">Unlock the magic <span>&rarr;</span></button></form>
+            <p id="password-message" class="password-message" aria-live="polite"></p>
+        </div>
+    </section>
+    <!-- LOCK SCREEN / COUNTDOWN SECTION -->
+    <section id="countdown-screen" class="hidden">
+        <div class="glass-card countdown-container">
+            <h1 class="birthday-title animate-text">HAPPY BIRTHDAY<br><span class="highlight">USHA AMMA</span></h1>
+            <p class="subtitle">Countdown to your birthday surprise has begun...</p>
+
+            <!-- Countdown Grid -->
+            <div class="timer-grid" aria-label="Countdown timer">
+                <div class="timer-box">
+                    <span id="timer-days">00</span>
+                    <label>Days</label>
+                </div>
+                <div class="timer-box">
+                    <span id="timer-hours">00</span>
+                    <label>Hours</label>
+                </div>
+                <div class="timer-box">
+                    <span id="timer-minutes">00</span>
+                    <label>Minutes</label>
+                </div>
+                <div class="timer-box">
+                    <span id="timer-seconds">00</span>
+                    <label>Seconds</label>
+                </div>
+            </div>
+
+            <button id="reveal-btn" class="reveal-btn">
+                <span class="btn-icon">🎁</span> Open My Surprise
+            </button>
+            <p id="unlock-hint" class="unlock-hint">Your birthday surprise is ready to explore! ✨</p>
+        </div>
+    </section>
+
+    <!-- MAIN SURPRISE CONTENT -->
+    <main id="main-content" class="hidden">
+        <!-- Navigation Header -->
+        <header class="main-header">
+            <nav class="nav-tabs">
+                <button class="nav-btn active" data-target="letter-section">💌 Cute Letter</button>
+                <button class="nav-btn" data-target="tree-section">🌸 Memory Tree</button>
+            </nav>
+        </header>
+
+        <!-- Cute Letter Section -->
+        <section id="letter-section" class="content-section active-section">
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter-card" id="letter-card">
+                        <div class="letter-content">
+                            <h2 class="letter-title">Dear Amma,</h2>
+                            <div class="letter-text">
+                                <p>Happy Birthday to the most incredible, selfless, and beautiful soul I have ever known — my Amma, my Usha! 🌸❤️</p>
+                                <p>You are the reason I know what unconditional love feels like. Every sacrifice you made, every smile you gave, every time you put us before yourself — I see it all, and I am endlessly grateful.</p>
+                                <p>You are not just my mother — you are my safe place, my biggest cheerleader, and the warmest heart I have ever found. This world is truly brighter because you are in it.</p>
+                                <p>On this very special day, I want you to know: you deserve all the happiness, rest, and love in the world. May this year bring you everything your beautiful heart desires and so much more! 🎉✨</p>
+                                <p class="closing">With all my love, always and forever,</p>
+                                <p class="signature">Your Child 💕</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="instruction-text">
+                <p>✨ Click the envelope to open and read your letter! ✨</p>
+            </div>
+        </section>
+
+        <!-- Memory Tree Section -->
+        <section id="tree-section" class="content-section">
+            <div class="tree-header">
+                <h2 class="section-title">✨ The Magical Memory Tree ✨</h2>
+                <p class="section-subtitle">Click on the glowing circular fruits hanging on the branches to reveal beautiful memories & messages.</p>
+            </div>
+
+            <!-- Memory Tree Container -->
+            <div class="tree-container">
+                <div class="tree-wrapper">
+                    <!-- Stylized SVG Tree Trunk and Branches -->
+                    <svg class="svg-tree" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2d1b4e" />
+                                <stop offset="50%" stop-color="#4a2872" />
+                                <stop offset="100%" stop-color="#180c2b" />
+                            </linearGradient>
+                            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="6" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Main Trunk -->
+                        <path d="M 370 800 C 370 700, 360 620, 390 550 C 400 520, 420 520, 430 550 C 440 620, 430 700, 430 800 Z" fill="url(#trunkGrad)" />
+                        
+                        <!-- Left Main Branch -->
+                        <path d="M 380 570 C 320 540, 240 540, 180 470 C 140 420, 150 350, 130 300 C 120 280, 140 280, 150 290 C 170 340, 160 390, 200 430 C 250 490, 320 490, 385 535 Z" fill="url(#trunkGrad)" />
+                        
+                        <!-- Right Main Branch -->
+                        <path d="M 420 570 C 480 540, 560 540, 620 470 C 660 420, 650 350, 670 300 C 680 280, 660 280, 650 290 C 630 340, 640 390, 600 430 C 550 490, 480 490, 415 535 Z" fill="url(#trunkGrad)" />
+
+                        <!-- Center/Top Branches -->
+                        <path d="M 395 550 C 390 480, 350 420, 340 350 C 330 300, 360 250, 380 200 C 390 180, 410 180, 420 200 C 440 250, 470 300, 460 350 C 450 420, 410 480, 405 550 Z" fill="url(#trunkGrad)" />
+
+                        <!-- Sub-branches Left -->
+                        <path d="M 230 495 C 190 460, 120 440, 90 380 C 80 360, 95 350, 105 365 C 130 410, 180 430, 220 455 Z" fill="url(#trunkGrad)" />
+                        <path d="M 280 515 C 240 450, 220 380, 170 330 C 160 320, 175 310, 185 325 C 230 370, 250 430, 285 480 Z" fill="url(#trunkGrad)" />
+                        
+                        <!-- Sub-branches Right -->
+                        <path d="M 570 495 C 610 460, 680 440, 710 380 C 720 360, 705 350, 695 365 C 670 410, 620 430, 580 455 Z" fill="url(#trunkGrad)" />
+                        <path d="M 520 515 C 560 450, 580 380, 630 330 C 640 320, 625 310, 615 325 C 570 370, 550 430, 515 480 Z" fill="url(#trunkGrad)" />
+                        
+                        <!-- Upper Sub-branches -->
+                        <path d="M 350 380 C 310 330, 290 280, 250 220 C 240 200, 260 190, 270 210 C 300 260, 320 300, 360 350 Z" fill="url(#trunkGrad)" />
+                        <path d="M 450 380 C 490 330, 510 280, 550 220 C 560 200, 540 190, 530 210 C 500 260, 480 300, 440 350 Z" fill="url(#trunkGrad)" />
+                        
+                        <!-- Magical glowing flowers / stars scattered around branches -->
+                        <g class="tree-decorations" filter="url(#glow)">
+                            <!-- Sparkle 1 -->
+                            <circle cx="340" cy="180" r="4" fill="#ffffff" class="star twinkle-fast" />
+                            <!-- Sparkle 2 -->
+                            <circle cx="460" cy="180" r="3.5" fill="#ffd32a" class="star twinkle-slow" />
+                            <!-- Sparkle 3 -->
+                            <circle cx="280" cy="220" r="5" fill="#fd79a8" class="star twinkle-fast" />
+                            <!-- Sparkle 4 -->
+                            <circle cx="520" cy="220" r="4" fill="#a29bfe" class="star twinkle-slow" />
+                            <!-- Sparkle 5 -->
+                            <circle cx="210" cy="300" r="4.5" fill="#ffffff" class="star twinkle-fast" />
+                            <!-- Sparkle 6 -->
+                            <circle cx="590" cy="300" r="5" fill="#ff7675" class="star twinkle-slow" />
+                            <!-- Sparkle 7 -->
+                            <circle cx="160" cy="360" r="3" fill="#ffd32a" class="star twinkle-fast" />
+                            <!-- Sparkle 8 -->
+                            <circle cx="640" cy="360" r="4" fill="#ffffff" class="star twinkle-slow" />
+                            <!-- Sparkle 9 -->
+                            <circle cx="320" cy="320" r="5" fill="#fd79a8" class="star twinkle-fast" />
+                            <!-- Sparkle 10 -->
+                            <circle cx="480" cy="320" r="3" fill="#a29bfe" class="star twinkle-slow" />
+                            <!-- Sparkle 11 -->
+                            <circle cx="380" cy="400" r="4.5" fill="#ff7675" class="star twinkle-fast" />
+                            <!-- Sparkle 12 -->
+                            <circle cx="420" cy="400" r="5" fill="#ffffff" class="star twinkle-slow" />
+                        </g>
+                    </svg>
+
+                    <!-- Interactive Fruits Container (JS will populate these dynamically) -->
+                    <div class="fruits-container" id="fruits-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX / PHOTO DETAIL MODAL -->
+    <div id="memory-modal" class="modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <div class="modal-content glass-card">
+            <button class="nav-modal prev" id="prev-btn">&#10094;</button>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Memory Picture">
+                    <video id="modal-video" controls playsinline></video>
+                    <div id="image-fallback" class="img-fallback hidden">
+                        <div class="fallback-heart">❤️</div>
+                        <p>Memory #<span id="fallback-num">1</span></p>
+                    </div>
+                </div>
+                <div class="modal-desc-container">
+                    <span class="badge" id="modal-badge">Memory 1/25</span>
+                    <p id="modal-desc">This is a beautiful memory slot waiting for your picture!</p>
+                </div>
+            </div>
+            <button class="nav-modal next" id="next-btn">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
