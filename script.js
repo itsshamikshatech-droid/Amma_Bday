@@ -96,7 +96,7 @@ function updateCountdown() {
         return;
     }
 
-    setRevealEnabled(true); // PREVIEW MODE: always unlocked
+    setRevealEnabled(false);
 
     const totalSeconds = Math.floor(diff / 1000);
     const days = Math.floor(totalSeconds / (60 * 60 * 24));
